@@ -2,7 +2,7 @@
 # 👉 What is Moneytron?
 > Discover the financial tracker you didn't know you were missing
 
-
+Moneytron is a finance tracker that allows you to easily controll all you money!
 
 # 👉 Functionality
 
@@ -15,22 +15,13 @@
 
 # 👉 Structure and microservices
 
-<<<<<<< HEAD
-This app has microservice architecture with these structure:
-![Structure](./img/Structure.jpg)
-
-There is short description for all microservices and link to their pages:
-1. [JWT Authentication Microservice](https://github.com/pyankovdaniil/Moneytron) - authenticating users, storing their data, generating JWT and Refresh Tokens 
-2. [Cards Microservice](https://github.com/pyankovdaniil/Moneytron) -
-=======
 Moneytron has microservice architecture with this structure:
 
 ![Structure](./img/Structure.jpg)
 
 There is short description for all microservices and link to their pages:
 1. [JWT Authentication Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Authentication) - authenticating users, storing their data, generating JWT and Refresh Tokens 
-2. [Cards Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Cards) -
->>>>>>> be9e8d8 (Added empty Cards and Authentication microservices, Eureka, Open Feign and Spring Cloud Gateway)
+2. [Cards Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Cards) - storing information about cards (names and balances)
 3. [Categories Microservice](https://github.com/pyankovdaniil/Moneytron) - adding and removing new categories
 4. [Transactions Microservice](https://github.com/pyankovdaniil/Moneytron) - adding and deleting income and expenses from user cards
 5. [Reports Microservice](https://github.com/pyankovdaniil/Moneytron) - generating reports for user cards, organizing data by dates, prices and categories
@@ -51,13 +42,10 @@ There is short description for all microservices and link to their pages:
 - Spring Cloud Sleuth + Zipkin - gather requests timing data
 - Docker - to pull images and save all microservices to a containers
 
-<<<<<<< HEAD
-=======
 # 👉 How to use Moneytron?
 
 ---
 
->>>>>>> be9e8d8 (Added empty Cards and Authentication microservices, Eureka, Open Feign and Spring Cloud Gateway)
 # 👉 Installation
 
 
