@@ -39,8 +39,19 @@ There is short description for all microservices and link to their pages:
 - RabbitMQ - message query for asynchronous interaction between microservices
 - Eureka - regisrates every instance of microservices for better scalability
 - Open Feign - to get rid of code duplication
-- Spring Cloud Sleuth + Zipkin - gather requests timing data
 - Docker - to pull images and save all microservices to a containers
+- Micrometer + Zipkin - test requests timing
+- Postman - for generating requests
+
+# 👉 Testing the app
+
+For testing the microservice connection and speed of each microservice I used Micrometer, Zipkin and Postman.
+
+I was making requests with Postman, then get traceID from logs and check the whole path of the request through microservices.
+
+There is an example of how Zipkin allows to easily check the path of the request:
+
+![Zipkin and Postman](./img/Postman_and_Zipkin.jpg)
 
 # 👉 How to use Moneytron?
 

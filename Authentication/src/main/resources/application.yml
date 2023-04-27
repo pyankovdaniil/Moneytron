@@ -4,8 +4,19 @@ server:
 spring:
   application:
     name: Authentication
+  zipkin:
+    base-url: http://localhost:9411
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: ${spring.application.name:},%X{traceId:-},%X{spanId:-}
