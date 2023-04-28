@@ -20,3 +20,7 @@ management:
 logging:
   pattern:
     level: ${spring.application.name:},%X{traceId:-},%X{spanId:-}
+
+api:
+  documentation:
+    cardsMicroserviceUrl: http://localhost:8081/
