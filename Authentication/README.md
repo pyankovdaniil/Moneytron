@@ -1,4 +1,4 @@
-![Authentication Logo](./img/Authentication.png)
+![Authentication Logo](../img/Authentication.png)
 
 # 🔒 Authentication Microservice
 
