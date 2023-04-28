@@ -2,10 +2,23 @@ server:
   port: 8080
 
 spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: users
+      port: 27017
+      host: localhost
   application:
     name: Authentication
   zipkin:
     base-url: http://localhost:9411
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
 
 eureka:
   client:
@@ -20,3 +33,6 @@ management:
 logging:
   pattern:
     level: ${spring.application.name:},%X{traceId:-},%X{spanId:-}
+
+jwt:
+  secretKey: 6250655368566D597133743677397A24432646294A404D635166546A576E5A7234753778214125442A472D4B6150645267556B58703273357638792F423F4528482B4D6251655468566D597133743677397A24432646294A404E635266556A586E5A7234753778214125442A472D4B6150645367566B59703373357638792F42
