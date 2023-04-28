@@ -46,3 +46,7 @@ Now this microservice has three endpoints:
 - All refresh tokens are stored in a Redis database, so validating and refreshing a token is a very fast process.
 
 ---
+
+# 🍃 Few words about Spring Security
+
+In this microservice I used Spring Security, so all endpoints in the whole app are protected and require you to have valid and non expired JWT. Only **/api/v1/auth/...** endpoints are not protected, because they should return tokens for users who does not have them.
