@@ -6,11 +6,13 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import pyankovdaniil.microservices.clients.authentication.dto.BearerToken;
 import pyankovdaniil.microservices.dto.AuthenticationRequest;
 import pyankovdaniil.microservices.dto.RegistrationRequest;
 import pyankovdaniil.microservices.dto.tokens.RefreshJwtRequest;
 import pyankovdaniil.microservices.dto.tokens.RefreshJwtResponse;
 import pyankovdaniil.microservices.dto.tokens.TokensResponse;
+import pyankovdaniil.microservices.jwt.JwtAuthenticationFilter;
 import pyankovdaniil.microservices.jwt.JwtService;
 import pyankovdaniil.microservices.user.User;
 import pyankovdaniil.microservices.user.UserRepository;
@@ -75,6 +77,16 @@ public class AuthenticationService {
                         .newJwt(jwtService.generateJwt(user.get()))
                         .build());
             }
+        }
+
+        return Optional.empty();
+    }
+
+    public Optional<String> validateBearerToken(BearerToken bearerToken) {
+        String tokenWithPrefix = bearerToken.getBearerToken();
+        if (tokenWithPrefix.startsWith(JwtAuthenticationFilter.AUTH_HEADER_START)) {
+            String token = tokenWithPrefix.substring(JwtAuthenticationFilter.JWT_START_POSITION);
+            return jwtService.extractEmail(token);
         }
 
         return Optional.empty();
