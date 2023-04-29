@@ -17,7 +17,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - data:/data/db
+      - data:/data/dbs/mongo
 
   mongo-express:
     image: mongo-express
@@ -30,9 +30,43 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
       - ME_CONFIG_MONGODB_SERVER=mongodb
 
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+      PGDATA: /data/dbs/postgres
+    volumes:
+      - postgres:/data/dbs/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pguser@email.com
+      PGADMIN_DEFAULT_PASSWORD: pgpassword
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
 volumes:
   data: {}
+  postgres:
+  pgadmin:
 
 networks:
   default:
     name: mongodb_network
+  postgres:
+    driver: bridge

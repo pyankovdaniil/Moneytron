@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pyankovdaniil.microservices.clients.authentication.dto.BearerToken;
 import pyankovdaniil.microservices.dto.AuthenticationRequest;
+import pyankovdaniil.microservices.clients.authentication.dto.ExtractedEmail;
 import pyankovdaniil.microservices.dto.Message;
 import pyankovdaniil.microservices.dto.tokens.RefreshJwtRequest;
 import pyankovdaniil.microservices.dto.RegistrationRequest;
@@ -57,6 +59,18 @@ public record AuthenticationController(
         }
 
         Message response = Message.builder().message("Invalid refresh token!").build();
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @PostMapping("/extract-email")
+    public ResponseEntity<?> extractEmail(@RequestBody BearerToken bearerToken) {
+        Optional<String> email = authenticationService.validateBearerToken(bearerToken);
+        if (email.isPresent()) {
+            log.info("Successfully extracted email: {}", email.get());
+            return ResponseEntity.ok(ExtractedEmail.builder().email(email.get()).build());
+        }
+
+        Message response = Message.builder().message("Invalid bearer authentication token!").build();
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

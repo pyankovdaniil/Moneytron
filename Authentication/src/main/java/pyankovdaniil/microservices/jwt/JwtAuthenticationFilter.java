@@ -20,9 +20,9 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-    private static final String AUTH_HEADER_NAME = "Authorization";
-    private static final String AUTH_HEADER_START = "Bearer ";
-    private static final int JWT_START_POSITION = AUTH_HEADER_START.length();
+    public static final String AUTH_HEADER_NAME = "Authorization";
+    public static final String AUTH_HEADER_START = "Bearer ";
+    public static final int JWT_START_POSITION = AUTH_HEADER_START.length();
 
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;

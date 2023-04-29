@@ -4,6 +4,19 @@ server:
 spring:
   application:
     name: Cards
+  datasource:
+    username: 'pguser'
+    password: 'pgpassword'
+    url: jdbc:postgresql://localhost:5432/cards_microservice
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: 'true'
   zipkin:
     base-url: http://localhost:9411
 
