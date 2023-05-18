@@ -20,13 +20,14 @@ Moneytron has microservice architecture with this structure:
 ![Structure](./img/Structure.png)
 
 There is short description for all microservices and link to their pages:
-1. [JWT Authentication Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Authentication) - authenticating users, storing their data, generating JWT and Refresh Tokens 
-2. [Cards Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Cards) - storing information about cards (names and balances)
-3. [Categories Microservice](https://github.com/pyankovdaniil/Moneytron) - adding and removing new categories
-4. [Transactions Microservice](https://github.com/pyankovdaniil/Moneytron) - adding and deleting income and expenses from user cards
-5. [Reports Microservice](https://github.com/pyankovdaniil/Moneytron) - generating reports for user cards, organizing data by dates, prices and categories
-6. [Notification Microservice](https://github.com/pyankovdaniil/Moneytron) - sending emails to users when card balance is low
-7. [RabbitMQ](https://github.com/pyankovdaniil/Moneytron) - message query for asynchronous interaction between microservices
+1. [Api-Gateway Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Api-Gateway) - sending requests to all other microservices
+2. [JWT Authentication Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Authentication) - authenticating users, storing their data, generating JWT and Refresh Tokens 
+3. [Cards Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Cards) - storing information about cards (names and balances)
+4. [Categories Microservice](https://github.com/pyankovdaniil/Moneytron) - adding and removing new categories
+5. [Transactions Microservice](https://github.com/pyankovdaniil/Moneytron) - adding and deleting income and expenses from user cards
+6. [Reports Microservice](https://github.com/pyankovdaniil/Moneytron) - generating reports for user cards, organizing data by dates, prices and categories
+7. [Notification Microservice](https://github.com/pyankovdaniil/Moneytron) - sending emails to users when card balance is low
+8. [RabbitMQ](https://github.com/pyankovdaniil/Moneytron) - message query for asynchronous interaction between microservices
 
 # 👉 Technologies
 
