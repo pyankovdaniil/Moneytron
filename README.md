@@ -17,7 +17,7 @@ Moneytron is a finance tracker that allows you to easily controll all you money!
 
 Moneytron has microservice architecture with this structure:
 
-![Structure](./img/Structure.jpg)
+![Structure](./img/Structure.png)
 
 There is short description for all microservices and link to their pages:
 1. [JWT Authentication Microservice](https://github.com/pyankovdaniil/Moneytron/tree/main/Authentication) - authenticating users, storing their data, generating JWT and Refresh Tokens 
@@ -38,7 +38,7 @@ There is short description for all microservices and link to their pages:
 - Redis - storing Refresh Tokens
 - RabbitMQ - message query for asynchronous interaction between microservices
 - Eureka - regisrates every instance of microservices for better scalability
-- Open Feign - to get rid of code duplication
+- Open Feign - to set up synchronous comminucation between microservices & get rid of code duplication
 - Docker - to pull images and save all microservices to a containers
 - Micrometer + Zipkin - test requests timing
 - Postman - for generating requests
@@ -51,7 +51,7 @@ I was making requests with Postman, then get traceID from logs and check the who
 
 There is an example of how Zipkin allows to easily check the path of the request:
 
-![Zipkin and Postman](./img/Postman_and_Zipkin.jpg)
+![Zipkin and Postman](./img/Postman_and_Zipkin.png)
 
 # 👉 How to use Moneytron?
 
