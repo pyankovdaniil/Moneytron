@@ -1,4 +1,4 @@
-![Authentication Logo](../img/Cards.png)
+![Cards Logo](../img/Cards.png)
 
 # 💳 Cards Microservice
 
