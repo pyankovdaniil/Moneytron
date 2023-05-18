@@ -31,7 +31,7 @@ Now this microservice has three endpoints:
 
 ---
 
-2. /api/v1/auth/register - User authentication. You should send an email and password to your account, and if they are valid, you will receive JWT and Refresh Token in a JSON-format described previously. If your email and password are not valid, you wont receive any tokens, only 400 status code and message that your data are not correct.
+2. /api/v1/auth/authenticate - User authentication. You should send an email and password to your account, and if they are valid, you will receive JWT and Refresh Token in a JSON-format described previously. If your email and password are not valid, you wont receive any tokens, only 400 status code and message that your data are not correct.
 
 ---
 
